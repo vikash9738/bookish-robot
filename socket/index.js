@@ -4,7 +4,7 @@ const http = require("http");
 const { disconnect } = require("process");
 
 const server = http.createServer();
-const io = new Server(server, { cors: { origin: "http://localhost:5173" } });
+const io = new Server(server, { cors: { origin: "*" } });
 let onlineUsers=[];
 
 io.on("connection", (socket) => {

@@ -25,7 +25,7 @@ export const ChatContextProvider=({children, user})=>{
     console.log("notification:->",notifications);
     // console.log("current chat",currentChat)
     useEffect (()=>{
-        const newSocket = io("http://localhost:4567");
+        const newSocket = io("https://socket-siwq.onrender.com");
         setSocket(newSocket);
 
         return ()=>{

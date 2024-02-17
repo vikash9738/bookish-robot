@@ -1,6 +1,7 @@
 // Server Side (Node.js)
 const { Server } = require("socket.io");
 const http = require("http");
+require("dotenv").config()
 const { disconnect } = require("process");
 
 const server = http.createServer();
@@ -44,7 +45,7 @@ io.on("connection", (socket) => {
         io.emit("getOnlineUsers",onlineUsers);
     })
 });
-
-server.listen(4567, () => {
-    console.log("Socket.io server listening on port 4567");
+const PORT = process.env.PORT || 4567
+server.listen(PORT, () => {
+    console.log("Socket.io server listening on port ", PORT);
 });
